@@ -9,8 +9,6 @@
 }
 
 .q_img {
-    /*background-image: url("/inrc/Quiz/Content/Images/images.png");*/
-    background-image: url("https://dl.dropboxusercontent.com/u/1624652/images.png");
     display: none;
     position: absolute;
     width: 600px;
@@ -18,9 +16,8 @@
 }
 
 #q01_img {
-    background-position: 0 0;
     display: block;
+    background-image: url("/inrc/Quiz/Content/Images/bg.jpg");
 }
 #q02_img {
-    background-position: -600px 0;
 }

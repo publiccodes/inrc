@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>quiz</title>
-    <link rel="stylesheet" href="/inrc/Quiz/Content/Css/main.min.css" type="text/css" />
+    <link rel="stylesheet" href="/inrc/Quiz/Content/Css/main.css" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="/inrc/Quiz/Scripts/main.min.js"></script>
+    <script src="/inrc/Quiz/Scripts/main.js"></script>
 </head>
 <body>
-    <audio id="main_bgm" preload="auto" loop autoplay>
+    <audio id="main_bgm" preload="auto" loop>
         <source src="/inrc/Quiz/Content/Audio/main.mp3" type="audio/mp3">
     </audio>
     <audio id="click_sound" preload="auto">
@@ -20,19 +20,19 @@
 
     <div id="quiz_panels_wrap">
         <div id="q01_wrap">
-            <img id="q01_img" class="q_img" usemap="#q01_img" />
+            <img id="q01_img" class="q_img" usemap="#q01_img" src="/inrc/Quiz/Content/Images/blank.png" />
             <map name="q01_img">
                 <area id="play_button" shape="rect" coords="164,381,433,460" href="#" alt="01" />
-                <area id="mute_button" shape="rect" coords="500,400,600,500" href="#" alt="01" />
+                <area id="mute_button" shape="rect" coords="466,407,567,455" href="#" alt="01" />
             </map>
         </div>
-        <div id="q02_wrap">
+        <!--<div id="q02_wrap">
             <img id="q02_img" class="q_img" usemap="#q02_img" />
             <map name="q02_img">
                 <area id="button_02" shape="rect" coords="164,381,433,460" href="#" alt="01" />
             </map>
         </div>
-        <!--<div id="quiz_panel_03" class="quiz_panel"></div>
+        <div id="quiz_panel_03" class="quiz_panel"></div>
         <div id="quiz_panel_04" class="quiz_panel"></div>
         <div id="quiz_panel_05" class="quiz_panel"></div>
         <div id="quiz_panel_06" class="quiz_panel"></div>
