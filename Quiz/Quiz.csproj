@@ -107,6 +107,8 @@
     <Content Include="Content\Images\images.png" />
     <Content Include="Content\Images\loading.gif" />
     <Content Include="index.html" />
+    <Content Include="Scripts\excanvas.compiled.js" />
+    <Content Include="Scripts\excanvas.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\main.min.js">
       <DependentUpon>main.js</DependentUpon>
