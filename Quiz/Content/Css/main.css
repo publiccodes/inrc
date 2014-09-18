@@ -5,11 +5,11 @@
     background-color: #fff;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("/Content/Images/loading.gif");
+    background-image: url("/inrc/Quiz/Content/Images/loading.gif");
 }
 
 .quiz_panel {
-    background-image: url("/Content/Images/images.png");
+    background-image: url("/inrc/Quiz/Content/Images/images.png");
     display: none;
     position: absolute;
     width: 600px;
@@ -17,7 +17,7 @@
 }
 
 #q01_img {
-    background-image: url("/Content/Images/images.png");
+    background-image: url("/inrc/Quiz/Content/Images/images.png");
     background-position: 0px 0px;
     display: block;
     width: 600px;
