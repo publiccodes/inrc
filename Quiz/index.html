@@ -8,6 +8,9 @@
     <script src="/inrc/Quiz/Scripts/main.min.js"></script>
 </head>
 <body>
+    <audio id="main_bgm" preload="auto" loop autoplay>
+        <source src="/inrc/Quiz/Content/Audio/main.mp3" type="audio/mp3">
+    </audio>
     <audio id="click_sound" preload="auto">
         <source src="/inrc/Quiz/Content/Audio/click.mp3" type="audio/mp3">
     </audio>
@@ -19,7 +22,8 @@
         <div id="q01_wrap">
             <img id="q01_img" class="q_img" usemap="#q01_img" />
             <map name="q01_img">
-                <area id="button_01" shape="rect" coords="164,381,433,460" href="#" alt="01" />
+                <area id="play_button" shape="rect" coords="164,381,433,460" href="#" alt="01" />
+                <area id="mute_button" shape="rect" coords="500,400,600,500" href="#" alt="01" />
             </map>
         </div>
         <div id="q02_wrap">
