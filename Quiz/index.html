@@ -1,10 +1,37 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>quiz</title>
+    <link rel="stylesheet" href="/content/css/main.css" type="text/css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="/scripts/main.js"></script>-->
+    <script type="text/javascript" src="http://publiccodes.github.io/inrc/Quiz/Scripts/main.js"></script>
 </head>
 <body>
-    rerere 000
+    <audio id="click_sound" preload="auto">
+        <source src="/content/audio/click.mp3" type="audio/mp3">
+    </audio>
+    <audio id="hover_sound" preload="auto">
+        <source src="/content/audio/hover.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="quiz_panels_wrap">
+        <div id="q01_wrap">
+            <img id="q01_img" usemap="#q01_img" />
+            <map name="q01_img">
+                <area id="button_01" shape="rect" coords="164,381,433,460" href="#" alt="01" />
+            </map>
+        </div>
+        <!--<div id="quiz_panel_02" class="quiz_panel"></div>
+        <div id="quiz_panel_03" class="quiz_panel"></div>
+        <div id="quiz_panel_04" class="quiz_panel"></div>
+        <div id="quiz_panel_05" class="quiz_panel"></div>
+        <div id="quiz_panel_06" class="quiz_panel"></div>
+        <div id="quiz_panel_07" class="quiz_panel"></div>
+        <div id="quiz_panel_08" class="quiz_panel"></div>
+        <div id="quiz_panel_09" class="quiz_panel"></div>
+        <div id="quiz_panel_10" class="quiz_panel"></div>-->
+    </div>
 </body>
 </html>
