@@ -1,4 +1,4 @@
-#quiz_panels_wrap {
+﻿#quiz_panels_wrap {
     width: 600px;
     height: 500px;
     position: relative;
@@ -9,7 +9,8 @@
 }
 
 .q_img {
-    background-image: url("/inrc/Quiz/Content/Images/images.png");
+    /*background-image: url("/inrc/Quiz/Content/Images/images.png");*/
+    background-image: url("https://dl.dropboxusercontent.com/u/1624652/images.png");
     display: none;
     position: absolute;
     width: 600px;
