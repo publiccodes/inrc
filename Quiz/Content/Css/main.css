@@ -8,7 +8,7 @@
     background-image: url("/inrc/Quiz/Content/Images/loading.gif");
 }
 
-.quiz_panel {
+.q_img {
     background-image: url("/inrc/Quiz/Content/Images/images.png");
     display: none;
     position: absolute;
@@ -17,9 +17,9 @@
 }
 
 #q01_img {
-    background-image: url("/inrc/Quiz/Content/Images/images.png");
-    background-position: 0px 0px;
+    background-position: 0 0;
     display: block;
-    width: 600px;
-    height: 500px;
+}
+#q02_img {
+    background-position: -600px 0;
 }
