@@ -103,6 +103,7 @@
     <Content Include="Content\Images\09-03.jpg" />
     <Content Include="Content\Images\bg.jpg" />
     <Content Include="Content\Images\blank.png" />
+    <Content Include="Content\Images\images.gif" />
     <Content Include="Content\Images\images.png" />
     <Content Include="Content\Images\loading.gif" />
     <Content Include="index.html" />
