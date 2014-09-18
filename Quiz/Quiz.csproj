@@ -57,6 +57,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Audio\click.mp3" />
+    <Content Include="Content\Audio\hover.mp3" />
+    <Content Include="Content\Audio\main.mp3" />
+    <Content Include="Content\Css\main.css" />
+    <Content Include="Content\Images\images.png" />
+    <Content Include="Content\Images\loading.gif" />
     <Content Include="index.html" />
     <Content Include="Scripts\main.js" />
     <Content Include="Web.config" />
