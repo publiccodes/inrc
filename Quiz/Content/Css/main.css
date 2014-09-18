@@ -2,6 +2,9 @@
     width: 600px;
     height: 500px;
     position: relative;
+    background-image: url("../Images/loading.gif");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #image_panel {
@@ -13,8 +16,8 @@
 .button {
     position: absolute;
     cursor: pointer;
-    background-color: #f50;
-    opacity: 0.0;
+    /*background-color: #f50;
+    opacity: 0.0;*/
 }
 
 #game_play_button {
