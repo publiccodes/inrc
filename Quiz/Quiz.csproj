@@ -61,16 +61,25 @@
     <Content Include="Content\Audio\hover.mp3" />
     <Content Include="Content\Audio\main.mp3" />
     <Content Include="Content\Css\main.css" />
+    <Content Include="Content\Css\main.min.css">
+      <DependentUpon>main.css</DependentUpon>
+    </Content>
     <Content Include="Content\Images\images.png" />
     <Content Include="Content\Images\loading.gif" />
     <Content Include="index.html" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\main.min.js">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\main.min.js.map">
+      <DependentUpon>main.min.js</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
