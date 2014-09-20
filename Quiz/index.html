@@ -5,17 +5,8 @@
     <meta name="robots" content="noindex,nofollow" />
     <title>rarara</title>
     <link rel="stylesheet" href="Content/Css/main.min.css" type="text/css" />
-    <script type="text/javascript">
-        var _isIe8 = false;
-    </script>
-    <!--[if IE 8]>
-    <script src="Scripts/excanvas.compiled.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-        _isIe8 = true;
-    </script>
-    <![endif]-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript" src="Scripts/main.min.js"></script>
+    <script type="text/javascript" src="Scripts/main.js"></script>
 </head>
 <body>
     <audio id="main_bgm" preload="auto" loop>
@@ -29,8 +20,28 @@
     </audio>
     <div id="quiz_panels_wrap">
         <canvas id="image_panel"></canvas>
-        <div id="game_play_button" class="button"></div>
-        <div id="sound_stop_button" class="button"></div>
+        <div id="game_play_button" class="button p00"></div>
+        <div id="sound_stop_button" class="button p00"></div>
+
+        <div id="q01_a" class="button p01 q_a" data-ans-no="0" data-panel-no="01"></div>
+        <div id="q01_b" class="button p01 q_b" data-ans-no="1" data-panel-no="01"></div>
+        <div id="q01_c" class="button p01 q_c" data-ans-no="2" data-panel-no="01"></div>
+
+        <div id="q02_a" class="button p02 q_a" data-ans-no="3" data-panel-no="02"></div>
+        <div id="q02_b" class="button p02 q_b" data-ans-no="4" data-panel-no="02"></div>
+        <div id="q02_c" class="button p02 q_c" data-ans-no="5" data-panel-no="02"></div>
+
+        <div id="q03_a" class="button p03 q_a" data-ans-no="3" data-panel-no="03"></div>
+        <div id="q03_b" class="button p03 q_b" data-ans-no="4" data-panel-no="03"></div>
+        <div id="q03_c" class="button p03 q_c" data-ans-no="5" data-panel-no="03"></div>
+
+        <div id="q04_a" class="button p04 q_a" data-ans-no="3" data-panel-no="04"></div>
+        <div id="q04_b" class="button p04 q_b" data-ans-no="4" data-panel-no="04"></div>
+        <div id="q04_c" class="button p04 q_c" data-ans-no="5" data-panel-no="04"></div>
+
+        <div id="q05_a" class="button p05 q_a" data-ans-no="3" data-panel-no="05"></div>
+        <div id="q05_b" class="button p05 q_b" data-ans-no="4" data-panel-no="05"></div>
+        <div id="q05_c" class="button p05 q_c" data-ans-no="5" data-panel-no="05"></div>
     </div>
 </body>
 </html>
