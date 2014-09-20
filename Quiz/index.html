@@ -18,30 +18,40 @@
     <audio id="hover_sound" preload="auto">
         <source src="Content/Audio/hover.mp3" type="audio/mp3">
     </audio>
+    <audio id="result_sound" preload="auto">
+        <source src="Content/Audio/result.mp3" type="audio/mp3">
+    </audio>
+    <audio id="result_bgm" preload="auto">
+        <source src="Content/Audio/result_bgm.mp3" type="audio/mp3">
+    </audio>
     <div id="quiz_panels_wrap">
         <canvas id="image_panel"></canvas>
         <div id="game_play_button" class="button p00"></div>
         <div id="sound_stop_button" class="button p00"></div>
 
-        <div id="q01_a" class="button p01 q_a" data-ans-no="0" data-panel-no="01"></div>
-        <div id="q01_b" class="button p01 q_b" data-ans-no="1" data-panel-no="01"></div>
-        <div id="q01_c" class="button p01 q_c" data-ans-no="2" data-panel-no="01"></div>
+        <div id="q01_a" class="button p01 q_a" data-ans-no="0"></div>
+        <div id="q01_b" class="button p01 q_b" data-ans-no="1"></div>
+        <div id="q01_c" class="button p01 q_c" data-ans-no="2"></div>
 
-        <div id="q02_a" class="button p02 q_a" data-ans-no="3" data-panel-no="02"></div>
-        <div id="q02_b" class="button p02 q_b" data-ans-no="4" data-panel-no="02"></div>
-        <div id="q02_c" class="button p02 q_c" data-ans-no="5" data-panel-no="02"></div>
+        <div id="q02_a" class="button p02 q_a" data-ans-no="3"></div>
+        <div id="q02_b" class="button p02 q_b" data-ans-no="4"></div>
+        <div id="q02_c" class="button p02 q_c" data-ans-no="5"></div>
 
-        <div id="q03_a" class="button p03 q_a" data-ans-no="3" data-panel-no="03"></div>
-        <div id="q03_b" class="button p03 q_b" data-ans-no="4" data-panel-no="03"></div>
-        <div id="q03_c" class="button p03 q_c" data-ans-no="5" data-panel-no="03"></div>
+        <div id="q03_a" class="button p03 q_a" data-ans-no="3"></div>
+        <div id="q03_b" class="button p03 q_b" data-ans-no="4"></div>
+        <div id="q03_c" class="button p03 q_c" data-ans-no="5"></div>
 
-        <div id="q04_a" class="button p04 q_a" data-ans-no="3" data-panel-no="04"></div>
-        <div id="q04_b" class="button p04 q_b" data-ans-no="4" data-panel-no="04"></div>
-        <div id="q04_c" class="button p04 q_c" data-ans-no="5" data-panel-no="04"></div>
+        <div id="q04_a" class="button p04 q_a" data-ans-no="3"></div>
+        <div id="q04_b" class="button p04 q_b" data-ans-no="4"></div>
+        <div id="q04_c" class="button p04 q_c" data-ans-no="5"></div>
 
-        <div id="q05_a" class="button p05 q_a" data-ans-no="3" data-panel-no="05"></div>
-        <div id="q05_b" class="button p05 q_b" data-ans-no="4" data-panel-no="05"></div>
-        <div id="q05_c" class="button p05 q_c" data-ans-no="5" data-panel-no="05"></div>
+        <div id="q05_a" class="button p05 q_a" data-ans-no="3"></div>
+        <div id="q05_b" class="button p05 q_b" data-ans-no="4"></div>
+        <div id="q05_c" class="button p05 q_c" data-ans-no="5"></div>
+
+        <div id="facebook_button" class="button  result_panel_button"></div>
+        <div id="tweet_button" class="button result_panel_button"></div>
+        <div id="again_button" class="button result_panel_button"></div>
     </div>
 </body>
 </html>

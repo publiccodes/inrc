@@ -9,6 +9,7 @@ var _scores = [
     1, 2, 3,
     1, 2, 3
 ];
+var _panelNo = 0;
 
 $(function () {
     var canvas = document.getElementById("image_panel");
@@ -24,20 +25,42 @@ $(function () {
     events();
 });
 
-function setPanel01() {
-    $(".p00").hide();
-    $(".p01").show();
-    setBackgroundImage(600, 0);
-    $(this).unbind("hover");
+function setNextPanel(dom) {
+    if (dom != null) {
+        $(dom).off();
+    }
+    var current = _panelNo;
+    var next = current + 1;
+    $(".p0" + current).hide();
+    $(".p0" + next).show();
+    setBackgroundImage(600 * next, 0);
+    _panelNo++;
+    if (_panelNo == 6) {
+        playSound("result_sound");
+        stopSound("main_bgm");
+        var time = (_isMute) ? 2000 : 4500;
+        setTimeout(function () {
+            playSound("result_bgm");
+            _panelNo = 6;
+            _panelNo = 7;
+            _panelNo = 8;
+            setNextPanel(null);
+            $(".result_panel_button").show();
+        }, time);
+    }
+}
+
+function setResultPanel(dom) {
+    $(".p05").hide();
+    $(".result_panel_button").show();
 }
 
 function events() {
     // -------------------------------------------------------
     // game_play_button
     $("#game_play_button").click(function () {
-        $(this).off();
         playSound("click_sound");
-        setPanel01();
+        setNextPanel(this);
     });
     $("#game_play_button").hover(function () {
         playSound("hover_sound");
@@ -62,26 +85,38 @@ function events() {
         setBackgroundImage(0, y);
     });
 
+    // -------------------------------------------------------
+    // setQuizPanel
     setQuizPanelEvents();
-}
 
-function setNextPanel(dom) {
-    var current = Number($(dom).data("panelNo"));
-    var next = current + 1;
-    $(".p0" + current).hide();
-    $(".p0" + next).show();
-    setBackgroundImage(600 * next, 0);
-    $(this).unbind("hover");
+    // -------------------------------------------------------
+    // setResultPanel
+    $("#facebook_button").hover(function () {
+        playSound("hover_sound");
+        setBackgroundImage(600 * _panelNo, 500);
+    }, function () {
+        setBackgroundImage(600 * _panelNo, 0);
+    });
+    $("#tweet_button").hover(function () {
+        playSound("hover_sound");
+        setBackgroundImage(600 * _panelNo, 1000);
+    }, function () {
+        setBackgroundImage(600 * _panelNo, 0);
+    });
+    $("#again_button").hover(function () {
+        playSound("hover_sound");
+        setBackgroundImage(600 * _panelNo, 1500);
+    }, function () {
+        setBackgroundImage(600 * _panelNo, 0);
+    });
 }
 
 function setQuizPanelEvents() {
-    var xPositions = [600, 1200, 1800, 2400, 3000];
-    var yPositions = [500, 1000, 1500];
     for (var quizNo = 0; quizNo < 5; quizNo++) {
         ["a", "b", "c"].forEach(function (val, index) {
             var id = String.Format("#q0{0}_{1}", quizNo + 1, val);
-            var x = xPositions[quizNo];
-            var y = yPositions[index];
+            var x = 600 * (quizNo + 1);
+            var y = 500 * (index + 1);
             $(id).click(function () {
                 var ansNo = $(this).data("ansNo");
                 _score += _scores[ansNo];
@@ -108,6 +143,14 @@ function playSound(id) {
         document.getElementById(id).play();
     }
 }
+
+function stopSound(id) {
+    if (!_isMute) {
+        document.getElementById(id).currentTime = 0;
+        document.getElementById(id).pause();
+    }
+}
+
 function pauseBgm() {
     document.getElementById("main_bgm").pause();
     _isMute = true;

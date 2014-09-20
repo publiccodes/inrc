@@ -16,7 +16,6 @@
 .button {
     position: absolute;
     cursor: pointer;
-
     /*background-color: #f50;
     opacity: 0.5;*/
 }
@@ -35,7 +34,7 @@
     height: 55px;
 }
 
-.p01, .p02, .p03, .p04, .p05, .p06, .p07, .p08, .p09 {
+.p01, .p02, .p03, .p04, .p05, .p06, .p07, .p08, .p09, .result_panel_button {
     display: none;
 }
 
@@ -58,4 +57,25 @@
     left: 390px;
     width: 150px;
     height: 90px;
+}
+
+#facebook_button {
+    top: 55px;
+    left: 328px;
+    width: 60px;
+    height: 75px;
+}
+
+#tweet_button {
+    top: 55px;
+    left: 392px;
+    width: 55px;
+    height: 75px;
+}
+
+#again_button {
+    top: 55px;
+    left: 451px;
+    width: 58px;
+    height: 75px;
 }
