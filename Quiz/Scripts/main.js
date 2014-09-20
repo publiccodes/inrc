@@ -68,7 +68,6 @@ function events() {
 function setNextPanel(dom) {
     var current = Number($(dom).data("panelNo"));
     var next = current + 1;
-    alert("ok");
     $(".p0" + current).hide();
     $(".p0" + next).show();
     setBackgroundImage(600 * next, 0);
