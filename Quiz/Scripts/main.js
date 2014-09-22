@@ -5,11 +5,14 @@ var _score = 0;
 var _panelNo = 0;
 
 $(function () {
+    createStyles();
+    createAudioElements();
+    createQuizPanelElements();
     var canvas = document.getElementById("image_panel");
     if (!canvas || !canvas.getContext) { return false; }
     _context = canvas.getContext("2d");
     _img = new Image();
-    _img.src = "Content/Images/images.gif";
+    _img.src = _settings.quizImages;
     _img.onload = function () {
         setBackgroundImage(0, 500);
     }
@@ -42,7 +45,6 @@ function setNextPanel(dom) {
             else {
                 _panelNo = 8;
             }
-            //Debug.writeln(String.Format("score:{0}, pageNo:{1}", _score, _panelNo));
             setNextPanel(null);
             $(".result_panel_button").show();
         }, time);
@@ -91,9 +93,8 @@ function events() {
     // -------------------------------------------------------
     // setResultPanel
     $("#facebook_button").click(function () {
-        var title = "ダイエットアプリ";
-        var url = encodeURIComponent("http://publiccodes.github.io/inrc/Quiz");
-        var href = String.Format("http://www.facebook.com/sharer.php?u={0}&amp;t={1}", url, title);
+        var url = encodeURIComponent(_settings.url);
+        var href = String.Format("http://www.facebook.com/sharer.php?u={0}", url);
         $(this).attr("href", href);
     });
     $("#facebook_button").hover(function () {
@@ -103,7 +104,7 @@ function events() {
         setBackgroundImage(600 * _panelNo, 0);
     });
     $("#tweet_button").click(function () {
-        var url = encodeURIComponent("http://publiccodes.github.io/inrc/Quiz");
+        var url = encodeURIComponent(_settings.url);
         var href = String.Format("http://twitter.com/share?url={0}", url);
         $(this).attr("href", href);
     });
@@ -119,6 +120,7 @@ function events() {
         playSound("main_bgm");
         _score = 0;
         _panelNo = 0;
+        $(".result_panel_button").hide();
         setQuizPanelEvents();
         setNextPanel(null);
     });
@@ -134,11 +136,9 @@ function setQuizPanelEvents() {
     for (var quizNo = 0; quizNo < 5; quizNo++) {
         ["a", "b", "c"].forEach(function (val, index) {
             var id = String.Format("#q0{0}_{1}", quizNo + 1, val);
-
             var x = 600 * (quizNo + 1);
             var y = 500 * (index + 1);
             $(id).off().click(function () {
-                var ansNo = $(this).data("ansNo");
                 _score += getScore(val);
                 playSound("click_sound");
                 $(this).off();
@@ -196,10 +196,3 @@ function setBackgroundImage(x, y) {
     _context.drawImage(_img, x, y, 600, 500, 0, 0, 600, 500);
 }
 
-String.Format = function () {
-    if (typeof (arguments[0]) == "string") {
-        for (var i = 0; i < arguments.length; i++) {
-            arguments[0] = arguments[0].replace("{" + i + "}", arguments[i + 1]);
-        }
-    } return arguments[0];
-};

@@ -3,56 +3,32 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="noindex,nofollow" />
-    <title>rarara</title>
-    <link rel="stylesheet" href="Content/Css/main.min.css" type="text/css" />
-    <script src="https://apis.google.com/js/client.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript" src="Scripts/main.min.js"></script>
+    <title>おすすめダイエット診断</title>
+    <!--<link rel="stylesheet" href="Content/Css/main.min.css" type="text/css" />-->
+    <!--<script src="Scripts/jquery-1.11.1.min.js"></script>
+    <script src="Scripts/mymethods.js"></script>
+    <script src="Scripts/create_elements.js"></script>
+    <script src="Scripts/main.min.js"></script>-->
 </head>
 <body>
-    <audio id="main_bgm" preload="auto" loop>
-        <source src="Content/Audio/main.mp3" type="audio/mp3">
-    </audio>
-    <audio id="click_sound" preload="auto">
-        <source src="Content/Audio/click.mp3" type="audio/mp3">
-    </audio>
-    <audio id="hover_sound" preload="auto">
-        <source src="Content/Audio/hover.mp3" type="audio/mp3">
-    </audio>
-    <audio id="result_sound" preload="auto">
-        <source src="Content/Audio/result.mp3" type="audio/mp3">
-    </audio>
-    <audio id="result_bgm" preload="auto">
-        <source src="Content/Audio/result_bgm.mp3" type="audio/mp3">
-    </audio>
-    <div id="quiz_panels_wrap">
-        <canvas id="image_panel"></canvas>
-        <div id="game_play_button" class="button p00"></div>
-        <div id="sound_stop_button" class="button p00"></div>
+    <script>
+        var _settings = {
+            // Facebook、Twitter用URL
+            url: "http://publiccodes.github.io/inrc/Quiz/",
 
-        <div id="q01_a" class="button p01 q_a" data-ans-no="0"></div>
-        <div id="q01_b" class="button p01 q_b" data-ans-no="1"></div>
-        <div id="q01_c" class="button p01 q_c" data-ans-no="2"></div>
+            // クイズ用画像のURL
+            quizImages: "http://publiccodes.github.io/inrc/Quiz/Content/Images/images.gif",
 
-        <div id="q02_a" class="button p02 q_a" data-ans-no="3"></div>
-        <div id="q02_b" class="button p02 q_b" data-ans-no="4"></div>
-        <div id="q02_c" class="button p02 q_c" data-ans-no="5"></div>
-
-        <div id="q03_a" class="button p03 q_a" data-ans-no="3"></div>
-        <div id="q03_b" class="button p03 q_b" data-ans-no="4"></div>
-        <div id="q03_c" class="button p03 q_c" data-ans-no="5"></div>
-
-        <div id="q04_a" class="button p04 q_a" data-ans-no="3"></div>
-        <div id="q04_b" class="button p04 q_b" data-ans-no="4"></div>
-        <div id="q04_c" class="button p04 q_c" data-ans-no="5"></div>
-
-        <div id="q05_a" class="button p05 q_a" data-ans-no="3"></div>
-        <div id="q05_b" class="button p05 q_b" data-ans-no="4"></div>
-        <div id="q05_c" class="button p05 q_c" data-ans-no="5"></div>
-
-        <a href="#" target="_blank" id="facebook_button" class="button  result_panel_button"></a>
-        <a href="#" target="_blank" id="tweet_button" class="button result_panel_button"></a>
-        <div id="again_button" class="button result_panel_button"></div>
+            // サウンドのURL
+            mainBgm: "http://publiccodes.github.io/inrc/Quiz/Content/Audio/main.mp3",
+            clickSound: "http://publiccodes.github.io/inrc/Quiz/Content/Audio/click.mp3",
+            hoverSound: "http://publiccodes.github.io/inrc/Quiz/Content/Audio/hover.mp3",
+            resultSound: "http://publiccodes.github.io/inrc/Quiz/Content/Audio/result.mp3",
+            resultBgm: "http://publiccodes.github.io/inrc/Quiz/Content/Audio/result_bgm.mp3"
+        };
+    </script>
+    <script src="Scripts/quiz.min.js"></script>
+    <div id="quiz_wrap">
     </div>
 </body>
 </html>

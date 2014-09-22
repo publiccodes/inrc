@@ -69,15 +69,15 @@
     <Content Include="Content\Images\images.gif" />
     <Content Include="Content\Images\loading.gif" />
     <Content Include="index.html" />
-    <Content Include="Scripts\excanvas.compiled.js" />
-    <Content Include="Scripts\excanvas.js" />
+    <Content Include="Scripts\create_elements.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="Scripts\main.js" />
-    <Content Include="Scripts\main.min.js">
-      <DependentUpon>main.js</DependentUpon>
+    <Content Include="Scripts\mymethods.js" />
+    <Content Include="Scripts\quiz.js">
+      <DependentUpon>quiz.js.bundle</DependentUpon>
     </Content>
-    <Content Include="Scripts\p1.js" />
-    <Content Include="Scripts\p1.min.js">
-      <DependentUpon>p1.js</DependentUpon>
+    <Content Include="Scripts\quiz.min.js">
+      <DependentUpon>quiz.js</DependentUpon>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
@@ -85,11 +85,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\main.min.js.map">
-      <DependentUpon>main.min.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\p1.min.js.map">
-      <DependentUpon>p1.min.js</DependentUpon>
+    <Content Include="Scripts\quiz.js.bundle" />
+    <Content Include="Scripts\quiz.min.js.map">
+      <DependentUpon>quiz.min.js</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
