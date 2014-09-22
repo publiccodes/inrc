@@ -2,13 +2,6 @@
 var _context = null;
 var _img = new Image();
 var _score = 0;
-var _scores = [
-    3, 1, 2,
-    1, 2, 3,
-    1, 2, 3,
-    1, 2, 3,
-    1, 2, 3
-];
 var _panelNo = 0;
 
 $(function () {
@@ -41,9 +34,15 @@ function setNextPanel(dom) {
         var time = (_isMute) ? 2000 : 4500;
         setTimeout(function () {
             playSound("result_bgm");
-            _panelNo = 6;
-            _panelNo = 7;
-            _panelNo = 8;
+            if (40 <= _score) {
+                _panelNo = 6;
+            } else if (20 <= _score && _score < 40) {
+                _panelNo = 7;
+            }
+            else {
+                _panelNo = 8;
+            }
+            //Debug.writeln(String.Format("score:{0}, pageNo:{1}", _score, _panelNo));
             setNextPanel(null);
             $(".result_panel_button").show();
         }, time);
@@ -91,17 +90,37 @@ function events() {
 
     // -------------------------------------------------------
     // setResultPanel
+    $("#facebook_button").click(function () {
+        var title = "ダイエットアプリ";
+        var url = encodeURIComponent("http://publiccodes.github.io/inrc/Quiz");
+        var href = String.Format("http://www.facebook.com/sharer.php?u={0}&amp;t={1}", url, title);
+        $(this).attr("href", href);
+    });
     $("#facebook_button").hover(function () {
         playSound("hover_sound");
         setBackgroundImage(600 * _panelNo, 500);
     }, function () {
         setBackgroundImage(600 * _panelNo, 0);
     });
+    $("#tweet_button").click(function () {
+        var url = encodeURIComponent("http://publiccodes.github.io/inrc/Quiz");
+        var href = String.Format("http://twitter.com/share?url={0}", url);
+        $(this).attr("href", href);
+    });
     $("#tweet_button").hover(function () {
         playSound("hover_sound");
         setBackgroundImage(600 * _panelNo, 1000);
     }, function () {
         setBackgroundImage(600 * _panelNo, 0);
+    });
+    $("#again_button").click(function () {
+        playSound("click_sound");
+        stopSound("result_bgm");
+        playSound("main_bgm");
+        _score = 0;
+        _panelNo = 0;
+        setQuizPanelEvents();
+        setNextPanel(null);
     });
     $("#again_button").hover(function () {
         playSound("hover_sound");
@@ -115,22 +134,34 @@ function setQuizPanelEvents() {
     for (var quizNo = 0; quizNo < 5; quizNo++) {
         ["a", "b", "c"].forEach(function (val, index) {
             var id = String.Format("#q0{0}_{1}", quizNo + 1, val);
+
             var x = 600 * (quizNo + 1);
             var y = 500 * (index + 1);
-            $(id).click(function () {
+            $(id).off().click(function () {
                 var ansNo = $(this).data("ansNo");
-                _score += _scores[ansNo];
+                _score += getScore(val);
                 playSound("click_sound");
                 $(this).off();
                 setNextPanel(this);
-            });
-            $(id).hover(function () {
+            }).hover(function () {
                 playSound("hover_sound");
                 setBackgroundImage(x, y);
             }, function () {
                 setBackgroundImage(x, 0);
             });
         });
+    }
+}
+
+function getScore(ansSymbol) {
+    switch (ansSymbol) {
+        case "a":
+            return 10;
+        case "b":
+            return 5;
+        case "c":
+            return 1;
+        default:
     }
 }
 
