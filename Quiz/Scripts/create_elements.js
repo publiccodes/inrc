@@ -68,6 +68,9 @@ function createQuizPanelElements() {
     html += "<a href='#' target='_blank' id='facebook_button' class='button  result_panel_button'></a>";
     html += "<a href='#' target='_blank' id='tweet_button' class='button result_panel_button'></a>";
     html += "<div id='again_button' class='button result_panel_button'></div>";
+    html += "<a href='#' target='_blank' id='recommended_link_01' class='recommended_link'></a>";
+    html += "<a href='#' target='_blank' id='recommended_link_02' class='recommended_link'></a>";
+    html += "<a href='#' target='_blank' id='recommended_link_03' class='recommended_link'></a>";
 
     quizPanelsWrap.append(html);
     $("#quiz_wrap").append(quizPanelsWrap);

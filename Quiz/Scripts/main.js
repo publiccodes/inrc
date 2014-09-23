@@ -45,15 +45,18 @@ function setNextPanel(dom) {
             else {
                 _panelNo = 8;
             }
-            setNextPanel(null);
             $(".result_panel_button").show();
+            setRecommendedLinks();
+            setNextPanel(null);
         }, time);
     }
 }
 
-function setResultPanel(dom) {
-    $(".p05").hide();
-    $(".result_panel_button").show();
+function setRecommendedLinks() {
+    $(".recommended_link").each(function (i, data) {
+        $(this).text(_settings.recommendedLinks[8 - _panelNo][i].title).show();
+        $(this).attr("href", _settings.recommendedLinks[8 - _panelNo][i].url);
+    });
 }
 
 function events() {
@@ -121,6 +124,7 @@ function events() {
         _score = 0;
         _panelNo = 0;
         $(".result_panel_button").hide();
+        $(".recommended_link").hide();
         setQuizPanelEvents();
         setNextPanel(null);
     });

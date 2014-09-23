@@ -69,6 +69,9 @@ function createQuizPanelElements() {
     html += "<a href='#' target='_blank' id='facebook_button' class='button  result_panel_button'></a>";
     html += "<a href='#' target='_blank' id='tweet_button' class='button result_panel_button'></a>";
     html += "<div id='again_button' class='button result_panel_button'></div>";
+    html += "<a href='#' target='_blank' id='recommended_link_01' class='recommended_link'></a>";
+    html += "<a href='#' target='_blank' id='recommended_link_02' class='recommended_link'></a>";
+    html += "<a href='#' target='_blank' id='recommended_link_03' class='recommended_link'></a>";
 
     quizPanelsWrap.append(html);
     $("#quiz_wrap").append(quizPanelsWrap);
@@ -153,13 +156,15 @@ function setNextPanel(dom) {
             }
             setNextPanel(null);
             $(".result_panel_button").show();
+            setRecommendedLinks();
         }, time);
     }
 }
 
-function setResultPanel(dom) {
-    $(".p05").hide();
-    $(".result_panel_button").show();
+function setRecommendedLinks() {
+    $(".recommended_link").each(function (i, data) {
+        //$(this).text(_settings.recommendedLinks[i].title);
+    });
 }
 
 function events() {
@@ -227,6 +232,7 @@ function events() {
         _score = 0;
         _panelNo = 0;
         $(".result_panel_button").hide();
+        $(".recommended_link").hide();
         setQuizPanelEvents();
         setNextPanel(null);
     });

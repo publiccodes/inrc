@@ -69,3 +69,28 @@
     width: 58px;
     height: 75px;
 }
+
+.recommended_link {
+    position: absolute;
+    left: 80px;
+    width: 450px;
+    height: 20px;
+    line-height: 20px;
+    display: none;
+}
+
+    .recommended_link:hover {
+        color: #f50;
+    }
+
+#recommended_link_01 {
+    top: 380px;
+}
+
+#recommended_link_02 {
+    top: 405px;
+}
+
+#recommended_link_03 {
+    top: 430px;
+}
