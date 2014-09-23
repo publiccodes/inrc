@@ -115,24 +115,22 @@ var _score = 0;
 var _panelNo = 0;
 
 $(function () {
+    alert("001");
     createStyles();
     createAudioElements();
     createQuizPanelElements();
     var canvas = document.getElementById("image_panel");
     if (!canvas || !canvas.getContext) { return false; }
-    alert("0");
     _context = canvas.getContext("2d");
     _img = new Image();
     _img.src = _settings.quizImages;
-    alert("1");
     _img.onload = function () {
+        alert("in");
         setBackgroundImage(0, 500);
     }
     canvas.width = 600;
     canvas.height = 500;
-    alert("2");
     events();
-    alert("3");
 });
 
 function setNextPanel(dom) {
