@@ -5,7 +5,6 @@ var _score = 0;
 var _panelNo = 0;
 
 $(function () {
-    alert("003");
     createStyles();
     createAudioElements();
     createQuizPanelElements();
@@ -15,7 +14,6 @@ $(function () {
     _img = new Image();
     _img.src = _settings.quizImages;
     _img.onload = function () {
-        alert("in");
         setBackgroundImage(0, 500);
     }
     canvas.width = 600;
