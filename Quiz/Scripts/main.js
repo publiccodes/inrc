@@ -6,8 +6,11 @@ var _panelNo = 0;
 
 $(function () {
     createStyles();
+    alert("1");
     createAudioElements();
+    alert("2");
     createQuizPanelElements();
+    alert("3");
     var canvas = document.getElementById("image_panel");
     if (!canvas || !canvas.getContext) { return false; }
     _context = canvas.getContext("2d");
