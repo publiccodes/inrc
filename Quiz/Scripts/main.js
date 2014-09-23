@@ -5,7 +5,7 @@ var _score = 0;
 var _panelNo = 0;
 
 $(function () {
-    alert("001");
+    alert("003");
     createStyles();
     createAudioElements();
     createQuizPanelElements();

@@ -124,9 +124,13 @@ $(function () {
     _context = canvas.getContext("2d");
     _img = new Image();
     _img.src = _settings.quizImages;
-    _img.onload = function () {
-        alert("in");
+    $(_img).onload(function () {
+        alert("in2");
         setBackgroundImage(0, 500);
+    });
+    _img.onload = function () {
+        //alert("in8");
+        //setBackgroundImage(0, 500);
     }
     canvas.width = 600;
     canvas.height = 500;
