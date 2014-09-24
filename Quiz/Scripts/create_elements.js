@@ -42,6 +42,10 @@ function createQuizPanelElements() {
     var quizPanelsWrap = $("<div id='quiz_panels_wrap'></div>")
     var html = "<canvas id='image_panel'></canvas>";
 
+    html += "<div id='loading'><span>loading...</span>";
+    html += "<div id='progress_bar_wrap'><div id='progress_bar'></div></div>";
+    html += "</div>";
+
     html += "<div id='game_play_button' class='button p00'></div>";
     html += "<div id='sound_stop_button' class='button p00'></div>";
 

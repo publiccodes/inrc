@@ -113,6 +113,7 @@ var _context = null;
 var _img = new Image();
 var _score = 0;
 var _panelNo = 0;
+var _images = new Array();
 
 $(function () {
     createStyles();
@@ -121,15 +122,32 @@ $(function () {
     var canvas = document.getElementById("image_panel");
     if (!canvas || !canvas.getContext) { return false; }
     _context = canvas.getContext("2d");
-    _img = new Image();
-    _img.src = _settings.quizImages;
-    _img.onload = function () {
-        setBackgroundImage(0, 500);
-    }
+    //_img = new Image();
+    //_img.src = _settings.quizImages;
+    //_img.onload = function () {
+    //    setBackgroundImage(0, 500);
+    //}
     canvas.width = 600;
     canvas.height = 500;
     events();
 });
+
+function loadQuizImages() {
+    for (var i = 0; i < 10; i++) {
+        _images.push(new Image());
+        _images[i].src = _settings.quizImages[i];
+        _images[i].onload = function () {
+            setProgress();
+        }
+    }
+}
+
+function setProgress() {
+    $("#progress").text(_progress++);
+    if (_progress == 10) {
+        setBackgroundImage(0, 0);
+    }
+}
 
 function setNextPanel(dom) {
     if (dom != null) {

@@ -66,8 +66,17 @@
     <Content Include="Content\Css\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
+    <Content Include="Content\Images\00.gif" />
+    <Content Include="Content\Images\01.gif" />
+    <Content Include="Content\Images\02.gif" />
+    <Content Include="Content\Images\03.gif" />
+    <Content Include="Content\Images\04.gif" />
+    <Content Include="Content\Images\05.gif" />
+    <Content Include="Content\Images\06.gif" />
+    <Content Include="Content\Images\07.gif" />
+    <Content Include="Content\Images\08.gif" />
+    <Content Include="Content\Images\09.gif" />
     <Content Include="Content\Images\images.gif" />
-    <Content Include="Content\Images\loading.gif" />
     <Content Include="index.html" />
     <Content Include="Scripts\create_elements.js" />
     <Content Include="Scripts\jquery-1.11.1.min.js" />

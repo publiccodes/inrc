@@ -3,23 +3,44 @@ var _context = null;
 var _img = new Image();
 var _score = 0;
 var _panelNo = 0;
+var _images = new Array();
+var _progress = 0;
 
 $(function () {
-    createStyles();
+    //createStyles();
     createAudioElements();
     createQuizPanelElements();
     var canvas = document.getElementById("image_panel");
     if (!canvas || !canvas.getContext) { return false; }
     _context = canvas.getContext("2d");
-    _img = new Image();
-    _img.src = _settings.quizImages;
-    _img.onload = function () {
-        setBackgroundImage(0, 500);
-    }
     canvas.width = 600;
     canvas.height = 500;
+    loadQuizImages();
     events();
 });
+
+function loadQuizImages() {
+    for (var i = 0; i < 10; i++) {
+        _images.push(new Image());
+        _images[i].src = _settings.quizImages[i];
+        _images[i].onload = function () {
+            setProgress();
+        }
+    }
+}
+
+function setProgress() {
+    var width = ++_progress;
+    $("#progress_bar").css("width", width * 10 + "%");
+    Debug.writeln(width);
+    if (_progress == 10) {
+        var time = 500;
+        $("#loading").fadeOut(time);
+        setTimeout(function () {
+            setBackgroundImage(0, 0);
+        }, time);
+    }
+}
 
 function setNextPanel(dom) {
     if (dom != null) {
@@ -29,7 +50,7 @@ function setNextPanel(dom) {
     var next = current + 1;
     $(".p0" + current).hide();
     $(".p0" + next).show();
-    setBackgroundImage(600 * next, 0);
+    setBackgroundImage(next, 0);
     _panelNo++;
     if (_panelNo == 6) {
         playSound("result_sound");
@@ -68,10 +89,10 @@ function events() {
     });
     $("#game_play_button").hover(function () {
         playSound("hover_sound");
-        var y = (_isMute) ? 1500 : 1000;
+        var y = (_isMute) ? 3 : 2;
         setBackgroundImage(0, y);
     }, function () {
-        var y = (_isMute) ? 500 : 0;
+        var y = (_isMute) ? 1 : 0;
         setBackgroundImage(0, y);
     });
 
@@ -83,9 +104,9 @@ function events() {
     });
     $("#sound_stop_button").hover(function () {
         playSound("hover_sound");
-        setBackgroundImage(0, 500);
+        setBackgroundImage(0, 1);
     }, function () {
-        var y = (_isMute) ? 500 : 0;
+        var y = (_isMute) ? 1 : 0;
         setBackgroundImage(0, y);
     });
 
@@ -102,9 +123,9 @@ function events() {
     });
     $("#facebook_button").hover(function () {
         playSound("hover_sound");
-        setBackgroundImage(600 * _panelNo, 500);
+        setBackgroundImage(_panelNo, 1);
     }, function () {
-        setBackgroundImage(600 * _panelNo, 0);
+        setBackgroundImage(_panelNo, 0);
     });
     $("#tweet_button").click(function () {
         var url = encodeURIComponent(_settings.url);
@@ -113,9 +134,9 @@ function events() {
     });
     $("#tweet_button").hover(function () {
         playSound("hover_sound");
-        setBackgroundImage(600 * _panelNo, 1000);
+        setBackgroundImage(_panelNo, 2);
     }, function () {
-        setBackgroundImage(600 * _panelNo, 0);
+        setBackgroundImage(_panelNo, 0);
     });
     $("#again_button").click(function () {
         playSound("click_sound");
@@ -130,9 +151,9 @@ function events() {
     });
     $("#again_button").hover(function () {
         playSound("hover_sound");
-        setBackgroundImage(600 * _panelNo, 1500);
+        setBackgroundImage(_panelNo, 3);
     }, function () {
-        setBackgroundImage(600 * _panelNo, 0);
+        setBackgroundImage(_panelNo, 0);
     });
 }
 
@@ -140,8 +161,8 @@ function setQuizPanelEvents() {
     for (var quizNo = 0; quizNo < 5; quizNo++) {
         ["a", "b", "c"].forEach(function (val, index) {
             var id = String.Format("#q0{0}_{1}", quizNo + 1, val);
-            var x = 600 * (quizNo + 1);
-            var y = 500 * (index + 1);
+            var x = (quizNo + 1);
+            var y = (index + 1);
             $(id).off().click(function () {
                 _score += getScore(val);
                 playSound("click_sound");
@@ -196,7 +217,8 @@ function playBgm() {
     _isMute = false;
 }
 
-function setBackgroundImage(x, y) {
-    _context.drawImage(_img, x, y, 600, 500, 0, 0, 600, 500);
+function setBackgroundImage(column, row) {
+    row = row * 500;
+    _context.drawImage(_images[column], 0, row, 600, 500, 0, 0, 600, 500);
 }
 
