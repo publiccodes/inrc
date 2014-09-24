@@ -29,6 +29,11 @@ function loadQuizImages() {
     }
 }
 
+function isMobileIOs() {
+    var userAgent = navigator.userAgent;
+    return (userAgent.search(/iPhone/) != -1 || userAgent.search(/iPad/) != -1 || userAgent.search(/iPod/) != -1);
+}
+
 function setProgress() {
     var width = ++_progress;
     $("#progress_bar").css("width", width * 10 + "%");
@@ -36,7 +41,11 @@ function setProgress() {
         var time = 500;
         $("#loading").fadeOut(time);
         setTimeout(function () {
-            setBackgroundImage(0, 1);
+            if (isMobileIOs()) {
+                setBackgroundImage(0, 4);
+            } else {
+                setBackgroundImage(0, 1);
+            }
         }, time);
     }
 }
