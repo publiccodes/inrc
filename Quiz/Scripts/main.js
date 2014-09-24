@@ -74,7 +74,7 @@ function setNextPanel(dom) {
         $("#mask").fadeOut(fadeTime, function () {
             _panelNo++;
             if (_panelNo == 6) {
-                var time = (_isMute) ? 2000 : 4100;
+                var time = (_isMute) ? 2000 : 3750;
                 setTimeout(function () {
                     playSound("result_bgm");
                     if (40 <= _score) {
