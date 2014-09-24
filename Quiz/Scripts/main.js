@@ -32,7 +32,6 @@ function loadQuizImages() {
 function setProgress() {
     var width = ++_progress;
     $("#progress_bar").css("width", width * 10 + "%");
-    Debug.writeln(width);
     if (_progress == 10) {
         var time = 500;
         $("#loading").fadeOut(time);
