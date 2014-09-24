@@ -31,6 +31,7 @@
 #progress_bar {
     background-color: #0097fb;
     height: 10px;
+    width: 0;
 }
 
 .button {
