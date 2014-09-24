@@ -194,8 +194,8 @@ function getScore(ansSymbol) {
  */
 function playSound(id) {
     if (!_isMute) {
-        document.getElementById(id).play();
         document.getElementById(id).currentTime = 0;
+        document.getElementById(id).play();
     }
 }
 
