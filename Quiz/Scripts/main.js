@@ -195,7 +195,8 @@ function getScore(ansSymbol) {
  */
 function loadSounds() {
     document.getElementById("main_bgm").load();
-    document.getElementById("click_sound").load();
+    document.getElementById("click_sound").play();
+    stopSound("click_sound");
     document.getElementById("hover_sound").load();
     document.getElementById("result_sound").load();
     document.getElementById("result_bgm").load();
