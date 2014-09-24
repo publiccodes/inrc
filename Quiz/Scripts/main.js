@@ -98,7 +98,6 @@ function events() {
     // -------------------------------------------------------
     // sound_stop_button
     $("#sound_stop_button").click(function () {
-        loadSounds();
         (!_isMute) ? pauseBgm() : playBgm();
         playSound("click_sound");
     });
@@ -193,19 +192,10 @@ function getScore(ansSymbol) {
 /* ---------------------------------------------------
  * 共通部分
  */
-function loadSounds() {
-    document.getElementById("main_bgm").load();
-    document.getElementById("click_sound").play();
-    stopSound("click_sound");
-    document.getElementById("hover_sound").load();
-    document.getElementById("result_sound").load();
-    document.getElementById("result_bgm").load();
-}
-
 function playSound(id) {
     if (!_isMute) {
-        document.getElementById(id).currentTime = 0;
         document.getElementById(id).play();
+        document.getElementById(id).currentTime = 0;
     }
 }
 
