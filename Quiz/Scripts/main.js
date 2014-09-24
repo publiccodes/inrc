@@ -58,27 +58,39 @@ function setNextPanel(dom) {
     var next = current + 1;
     $(".p0" + current).hide();
     $(".p0" + next).show();
-    setBackgroundImage(next, 0);
-    _panelNo++;
-    if (_panelNo == 6) {
-        playSound("result_sound");
-        stopSound("main_bgm");
-        var time = (_isMute) ? 2000 : 4500;
-        setTimeout(function () {
-            playSound("result_bgm");
-            if (40 <= _score) {
-                _panelNo = 6;
-            } else if (20 <= _score && _score < 40) {
-                _panelNo = 7;
-            }
-            else {
-                _panelNo = 8;
-            }
-            $(".result_panel_button").show();
-            setRecommendedLinks();
-            setNextPanel(null);
-        }, time);
+    var fadeTime = 0;
+    if (_panelNo >= 5) {
+        fadeTime = 300;
+        if (_panelNo == 5) {
+            playSound("result_sound");
+            stopSound("main_bgm");
+        }
     }
+    $("#mask").fadeIn(fadeTime, function () {
+        setBackgroundImage(next, 0);
+        if (_panelNo >= 6) {
+            setRecommendedLinks();
+        }
+        $("#mask").fadeOut(fadeTime, function () {
+            _panelNo++;
+            if (_panelNo == 6) {
+                var time = (_isMute) ? 2000 : 4000;
+                setTimeout(function () {
+                    playSound("result_bgm");
+                    if (40 <= _score) {
+                        _panelNo = 6;
+                    } else if (20 <= _score && _score < 40) {
+                        _panelNo = 7;
+                    }
+                    else {
+                        _panelNo = 8;
+                    }
+                    setNextPanel(null);
+                    $(".result_panel_button").show();
+                }, time);
+            }
+        });
+    });
 }
 
 function setRecommendedLinks() {

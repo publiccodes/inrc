@@ -15,7 +15,22 @@
     text-align: center;
 }
 
-#loading span{
+/*#region mask*/
+
+#mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 500px;
+    display: none;
+}
+
+/*#endregion*/
+
+/*#region loading*/
+
+#loading span {
     font-size: 14px;
     font-family: "ＭＳ ゴシック";
     line-height: 30px;
@@ -33,6 +48,8 @@
     height: 10px;
     width: 0;
 }
+
+/*#endregion*/
 
 .button {
     position: absolute;
