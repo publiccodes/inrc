@@ -118,7 +118,7 @@ var _images = new Array();
 var _progress = 0;
 
 $(function () {
-    //createStyles();
+    createStyles();
     createAudioElements();
     createQuizPanelElements();
     var canvas = document.getElementById("image_panel");
@@ -185,7 +185,7 @@ function setNextPanel(dom) {
         $("#mask").fadeOut(fadeTime, function () {
             _panelNo++;
             if (_panelNo == 6) {
-                var time = (_isMute) ? 2000 : 4000;
+                var time = (_isMute) ? 2000 : 4100;
                 setTimeout(function () {
                     playSound("result_bgm");
                     if (40 <= _score) {
