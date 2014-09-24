@@ -76,18 +76,19 @@
     <Content Include="Content\Images\07.gif" />
     <Content Include="Content\Images\08.gif" />
     <Content Include="Content\Images\09.gif" />
-    <Content Include="Content\Images\images.gif" />
     <Content Include="index.html" />
-    <Content Include="Scripts\create_elements.js" />
-    <Content Include="Scripts\jquery-1.11.1.min.js" />
-    <Content Include="Scripts\main.js" />
-    <Content Include="Scripts\mymethods.js" />
     <Content Include="Scripts\quiz.js">
       <DependentUpon>quiz.js.bundle</DependentUpon>
     </Content>
     <Content Include="Scripts\quiz.min.js">
       <DependentUpon>quiz.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\style.js" />
+    <Content Include="Scripts\audio.js" />
+    <Content Include="Scripts\create_elements.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\mymethods.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

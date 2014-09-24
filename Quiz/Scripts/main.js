@@ -7,7 +7,7 @@ var _images = new Array();
 var _progress = 0;
 
 $(function () {
-    //createStyles();
+    createStyles();
     createAudioElements();
     createQuizPanelElements();
     var canvas = document.getElementById("image_panel");

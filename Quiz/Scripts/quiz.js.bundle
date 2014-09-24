@@ -10,9 +10,11 @@
   </settings>
   <!--The order of the <file> elements determines the order of the files in the bundle.-->
   <files>
+    <file>/Scripts/audio.js</file>
     <file>/Scripts/create_elements.js</file>
     <file>/Scripts/jquery-1.11.1.min.js</file>
     <file>/Scripts/main.js</file>
     <file>/Scripts/mymethods.js</file>
+    <file>/Scripts/style.js</file>
   </files>
 </bundle>
