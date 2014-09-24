@@ -36,7 +36,7 @@ function setProgress() {
         var time = 500;
         $("#loading").fadeOut(time);
         setTimeout(function () {
-            setBackgroundImage(0, 0);
+            setBackgroundImage(0, 1);
         }, time);
     }
 }
@@ -98,6 +98,7 @@ function events() {
     // -------------------------------------------------------
     // sound_stop_button
     $("#sound_stop_button").click(function () {
+        loadSounds();
         (!_isMute) ? pauseBgm() : playBgm();
         playSound("click_sound");
     });
@@ -192,6 +193,14 @@ function getScore(ansSymbol) {
 /* ---------------------------------------------------
  * 共通部分
  */
+function loadSounds() {
+    document.getElementById("main_bgm").load();
+    document.getElementById("click_sound").load();
+    document.getElementById("hover_sound").load();
+    document.getElementById("result_sound").load();
+    document.getElementById("result_bgm").load();
+}
+
 function playSound(id) {
     if (!_isMute) {
         document.getElementById(id).currentTime = 0;
