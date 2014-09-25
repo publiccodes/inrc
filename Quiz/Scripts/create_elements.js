@@ -75,7 +75,7 @@ function createQuizPanelElements() {
     html += "<a href='#' target='_blank' id='recommended_link_02' class='recommended_link'></a>";
     html += "<a href='#' target='_blank' id='recommended_link_03' class='recommended_link'></a>";
 
-    html += String.Format("<div id='mask' style='background-image: url(\"{0}\"); background-position: 0 500px;'></div>", _settings.quizImages[6]);
+    html += String.Format("<div id='mask' style='background-image: url(\"{0}\");'></div>", _settings.quizImages[6]);
 
     quizPanelsWrap.append(html);
     $("#quiz_wrap").append(quizPanelsWrap);

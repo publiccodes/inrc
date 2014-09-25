@@ -36,7 +36,7 @@ function isMobileIOs() {
 
 function setProgress() {
     var width = ++_progress;
-    $("#progress_bar").css("width", width * 10 + "%");
+    $("#progress_bar").animate({ "width": width * 10 + "%" }, 10);
     if (_progress == 10) {
         var time = 500;
         $("#loading").fadeOut(time);

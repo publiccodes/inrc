@@ -97,7 +97,7 @@ function createQuizPanelElements() {
     html += "<a href='#' target='_blank' id='recommended_link_02' class='recommended_link'></a>";
     html += "<a href='#' target='_blank' id='recommended_link_03' class='recommended_link'></a>";
 
-    html += String.Format("<div id='mask' style='background-image: url(\"{0}\"); background-position: 0 500px;'></div>", _settings.quizImages[6]);
+    html += String.Format("<div id='mask' style='background-image: url(\"{0}\");'></div>", _settings.quizImages[6]);
 
     quizPanelsWrap.append(html);
     $("#quiz_wrap").append(quizPanelsWrap);
@@ -147,7 +147,7 @@ function isMobileIOs() {
 
 function setProgress() {
     var width = ++_progress;
-    $("#progress_bar").css("width", width * 10 + "%");
+    $("#progress_bar").animate({ "width": width * 10 + "%" }, 10);
     if (_progress == 10) {
         var time = 500;
         $("#loading").fadeOut(time);
@@ -364,6 +364,6 @@ String.Format = function () {
 };
 ///#source 1 1 /Scripts/style.js
 function createStyles() {
-    var style = '#quiz_panels_wrap{position:relative;width:600px;height:500px;background-position:center;background-repeat:no-repeat;background-color:#fafafa}#loading{position:absolute;margin:-20px 0 0 -200px;left:50%;top:50%;text-align:center}#mask{position:absolute;top:0;left:0;width:600px;height:500px;display:none}#loading span{font-size:14px;font-family:"ＭＳ ゴシック";line-height:30px;height:30px}#progress_bar_wrap{background-color:#ccc;width:400px;height:10px}#progress_bar{background-color:#0097fb;height:10px;width:0}.button{position:absolute;cursor:pointer}#game_play_button{left:163px;top:380px;width:275px;height:83px}#sound_stop_button{top:403px;left:461px;width:113px;height:55px}.p01,.p02,.p03,.p04,.p05,.p06,.p07,.p08,.p09,.result_panel_button{display:none}.q_a{top:350px;left:45px;width:150px;height:90px}.q_b{top:340px;left:213px;width:160px;height:90px}.q_c{top:350px;left:390px;width:150px;height:90px}#facebook_button{top:55px;left:328px;width:60px;height:75px}#tweet_button{top:55px;left:392px;width:55px;height:75px}#again_button{top:55px;left:451px;width:58px;height:75px}.recommended_link{position:absolute;left:80px;width:450px;height:20px;line-height:20px;display:none}.recommended_link:hover{color:#f50}#recommended_link_01{top:380px}#recommended_link_02{top:405px}#recommended_link_03{top:430px}';
+    var style = '#quiz_panels_wrap{position:relative;width:600px;height:500px;background-position:center;background-repeat:no-repeat;background-color:#fafafa}#mask{position:absolute;top:0;left:0;width:600px;height:500px;display:none;background-position:0 -500px}#loading{position:absolute;margin:-20px 0 0 -200px;left:50%;top:50%;text-align:center}#loading span{font-size:14px;font-family:"ＭＳ ゴシック";line-height:30px;height:30px}#progress_bar_wrap{background-color:#ccc;width:400px;height:10px}#progress_bar{background-color:#0097fb;height:10px;width:0}.button{position:absolute;cursor:pointer;display:none}#game_play_button{left:163px;top:380px;width:275px;height:83px;display:block}#sound_stop_button{top:403px;left:461px;width:113px;height:55px;display:block}.q_a{top:350px;left:45px;width:150px;height:90px}.q_b{top:340px;left:213px;width:160px;height:90px}.q_c{top:350px;left:390px;width:150px;height:90px}#facebook_button{top:55px;left:328px;width:60px;height:75px}#tweet_button{top:55px;left:392px;width:55px;height:75px}#again_button{top:55px;left:451px;width:58px;height:75px}.recommended_link{position:absolute;left:80px;width:450px;height:20px;line-height:20px;display:none}.recommended_link:hover{color:#f50}#recommended_link_01{top:380px}#recommended_link_02{top:405px}#recommended_link_03{top:430px}';
     $("#quiz_wrap").before(String.Format("<style>{0}</style>", style));
 };
